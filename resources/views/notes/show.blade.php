@@ -4,6 +4,9 @@
 >
 
     <h1>{{ $note->title }}</h1>
-    <p>{{ $note->body }}</p>
+
+    <p>{{ $note->description }}</p>
+
     <a href={{ route('notes.index') }}>Regresar</a>
+    
 </x-layouts.app>
