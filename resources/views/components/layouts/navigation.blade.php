@@ -21,18 +21,35 @@
                     </svg>
                     </a>
                 </div>
-                <div class="mx-auto">
+                <div class="ml-auto">
                     <div class="flex space-x-4">
-                        <a href="{{ route('home') }}"
-                           class="px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white {{ request()->routeIs('home') ? 'text-sky-600 dark:text-white' : 'text-slate-400' }}">
-                            Home
-                        </a>
-                        <a href="{{ route('notes.index') }}" class="px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white {{ request()->routeIs('notes.*') ? 'text-sky-600 dark:text-white' : 'text-slate-400' }}">
-                            Notes
-                        </a>
-                        <a href="{{ route('profile') }}" class="px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white {{ request()->routeIs('profile') ? 'text-sky-600 dark:text-white' : 'text-slate-400' }}">
-                            Profile
-                        </a>
+                        @auth
+                            <a href="{{ route('home') }}"
+                            class="px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white {{ request()->routeIs('home') ? 'text-sky-600 dark:text-white' : 'text-slate-400' }}">
+                                Home
+                            </a>
+                            <a href="{{ route('notes.index') }}" class="px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white {{ request()->routeIs('notes.*') ? 'text-sky-600 dark:text-white' : 'text-slate-400' }}">
+                                Notes
+                            </a>
+                            <a href="{{ route('profile') }}" class="px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white {{ request()->routeIs('profile') ? 'text-sky-600 dark:text-white' : 'text-slate-400' }}">
+                                Profile
+                            </a>
+                            <form action="{{ route('logout') }}" method="POST">
+                                @csrf
+                                <a href="#"
+                                   class="px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white text-slate-400"
+                                   onclick="this.closest('form').submit()"
+                                >Logout</a>
+                            </form>
+                        @endauth
+                        @guest
+                            <a href="{{ route('login') }}" class="lg:px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white {{ request()->routeIs('login') ? 'text-sky-600 dark:text-white' : 'text-slate-400' }}">
+                                Login
+                            </a>
+                            <a href="{{ route('register') }}" class="lg:px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white {{ request()->routeIs('register') ? 'text-sky-600 dark:text-white' : 'text-slate-400' }}">
+                                Register
+                            </a>
+                        @endguest
                     </div>
                 </div>
             </div>
