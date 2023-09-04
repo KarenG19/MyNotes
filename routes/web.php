@@ -3,8 +3,9 @@
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\NotesController;
+use App\Http\Controllers\UsersController;
 use Illuminate\Support\Facades\Route;
-
+use Symfony\Component\HttpKernel\Profiler\Profile;
 
 Route::view('/home', 'home')->name('home');
 
@@ -23,7 +24,12 @@ Route::resource('notes', NotesController::class, [
 ]);
 
 
-Route::view('/profile', 'profile')->name('profile')->middleware('auth');
+// Route::view('/profile', 'profile')->name('profile')->middleware('auth');
+
+Route::get('/users', [UsersController::class, 'index'])->name('users.index')->middleware('auth');
+Route::get('/users/{iduser}/edit', [UsersController::class, 'edit'])->name('users.edit')->middleware('auth');
+Route::patch('/users/{iduser}', [UsersController::class, 'update'])->name('users.update')->middleware('auth');
+Route::delete('/users/{iduser}', [UsersController::class, 'destroy'])->name('users.destroy')->middleware('auth');
 
 Route::view('/login', 'auth.login')->name('login');
 Route::post('/login', [AuthenticatedSessionController::class, 'store']);
@@ -32,3 +38,4 @@ Route::view('/register', 'auth.register')->name('register');
 Route::post('/register', [RegisteredUserController::class, 'store']);
 
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])->name('logout');
+

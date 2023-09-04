@@ -37,7 +37,7 @@
                             <a href="{{ route('notes.index') }}" class="px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white {{ request()->routeIs('notes.*') ? 'text-sky-600 dark:text-white' : 'text-slate-400' }}">
                                 Notes
                             </a>
-                            <a href="{{ route('profile') }}" class="px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white {{ request()->routeIs('profile') ? 'text-sky-600 dark:text-white' : 'text-slate-400' }}">
+                            <a href="{{ route('users.index') }}" class="px-3 py-2 text-sm font-medium rounded-md hover:text-sky-600 dark:hover:text-white {{ request()->routeIs('users.*') ? 'text-sky-600 dark:text-white' : 'text-slate-400' }}">
                                 Profile
                             </a>
                             <form action="{{ route('logout') }}" method="POST">
