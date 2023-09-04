@@ -5,13 +5,15 @@ namespace App\Http\Controllers;
 use App\Http\Requests\SaveNoteRequest;
 use App\Models\Note;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+
 
 class NotesController extends Controller
 {
     public function index()
     {
-        $mynotes = Note::get();
+        $mynotes = Note::where('id_user','=',Auth::user()->id)->get();
 
         return view('notes.index', ['mynotes' => $mynotes]);
     }
@@ -45,8 +47,8 @@ class NotesController extends Controller
         return to_route('notes.show', $idnote);
     }
 
-    public function destroy(Note $idnote){
-        
+    public function destroy(Note $idnote)
+    {    
         $idnote->delete();
 
         return to_route('notes.index');

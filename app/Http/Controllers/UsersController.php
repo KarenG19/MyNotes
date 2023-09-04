@@ -11,7 +11,7 @@ class UsersController extends Controller
 {
     public function index()
     {
-        $users = User::get();
+        $users = User::where('id','=',Auth::user()->id)->get();
 
         return view('users.index', ['users' => $users]);
     }
@@ -28,8 +28,8 @@ class UsersController extends Controller
         return to_route('users.index', $iduser);
     }
 
-    public function destroy(User $iduser){
-        
+    public function destroy(User $iduser)
+    {    
         $iduser->delete();
 
         return to_route('login')->with('status', 'Your profile was deleted!');
