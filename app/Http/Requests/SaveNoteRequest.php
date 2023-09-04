@@ -24,6 +24,7 @@ class SaveNoteRequest extends FormRequest
         return [
             'title' => ['required', 'min:4'],
             'description' => ['required'],
+            'id_user' => [''],
         ];
     }
 }

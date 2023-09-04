@@ -22,7 +22,7 @@
                     <path d="M264.8 332.76h512.2a10 10 0 0 0 0-20H264.8a10 10 0 0 0 0 20zM185.24 412.36h591.76a10 10 0 1 0 0-20H185.24a10 10 0 1 0 0 20zM185.24 492h591.76a10 10 0 0 0 0-20H185.24a10 10 0 1 0 0 20zM185.24 571.52h591.76a10 10 0 0 0 0-20H185.24a10 10 0 0 0 0 20zM589.92 631.12H185.24a10 10 0 0 0 0 20h404.68a10 10 0 0 0 0-20zM589.92 710.68H185.24a10 10 0 0 0 0 20h404.68a10 10 0 0 0 0-20zM589.92 790.28H185.24a10 10 0 0 0 0 20h404.68a10 10 0 0 0 0-20z" fill="#263238" />
                     <path d="M956.4 208h-16v-16a4 4 0 0 0-8 0v16h-16a4 4 0 0 0 0 8h16v16a4 4 0 0 0 8 0v-16h16a4 4 0 0 0 0-8z" fill="#FFDD00" /><path d="M932.4 82h-16v-16a4 4 0 0 0-8 0v16h-16a4 4 0 0 0 0 8h16v16a4 4 0 0 0 8 0v-16h16a4 4 0 0 0 0-8zM944 363.16a24 24 0 1 1 24-24 24 24 0 0 1-24 24z m0-40a16 16 0 1 0 16 16 16 16 0 0 0-16-16z" fill="#40BDFF" />
                 </svg>
-                <h1 class="my-4 font-serif text-2xl text-sky-600 dark:text-sky-500">Create Account</h1>
+                <h1 class="my-4 font-serif text-3xl text-sky-600 dark:text-sky-500">Create Account</h1>
             </div>
             
             <div class="space-y-4">
@@ -78,7 +78,7 @@
                 </button>
                 <p class="p-4 font-serif text-slate-600 dark:text-slate-400">
                     Already have an account?
-                    <a class="text-sm font-semibold underline border-2 border-transparent rounded dark:text-slate-300 text-slate-600 focus:border-slate-500 focus:outline-none" href="{{ route('login') }}">Login</a>
+                    <a class="font-serif border-2 border-transparent rounded text-sky-600 dark:text-sky-500 focus:border-slate-500 focus:outline-none" href="{{ route('login') }}">Login</a>
                 </p>
             </div>
         </form>

@@ -30,7 +30,7 @@ class NotesController extends Controller
     {
         Note::create($request->validated());
 
-        return to_route('notes.index')->with('status', 'Your note was created!');
+        return to_route('notes.index');
     }
 
     public function edit(Note $idnote)
@@ -42,13 +42,13 @@ class NotesController extends Controller
     {
         $idnote->update($request->validated());
 
-        return to_route('notes.show', $idnote)->with('status', 'Your note was updated!');
+        return to_route('notes.index', $idnote);
     }
 
     public function destroy(Note $idnote){
         
         $idnote->delete();
 
-        return to_route('notes.index')->with('status', "Note deleted!");
+        return to_route('notes.index');
     }
 }

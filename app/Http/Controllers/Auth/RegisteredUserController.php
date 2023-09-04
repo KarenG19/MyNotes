@@ -25,6 +25,6 @@ class RegisteredUserController extends Controller
         ]);
         
         
-        return to_route('login')->with('status', 'Account created!');
+        return to_route('login');
     }
 }
