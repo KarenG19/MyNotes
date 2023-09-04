@@ -10,10 +10,11 @@
             <hr class="">
             <p class="font-serif text-xl py-2 text-slate-600 dark:text-slate-400">{{ $note->description }}</p>
         </div>
-        <div class="flex justify-center items-center py-6">
+        <div class="flex flex-col justify-center items-center py-6">
             <a class="inline-flex items-center px-8 py-2 text-xs font-semibold tracking-widest text-center text-white uppercase transition duration-150 ease-in-out border border-2 border-transparent rounded-md dark:text-sky-200 bg-sky-800 hover:bg-sky-700 active:bg-sky-700 focus:outline-none focus:border-sky-500" href="{{ route('notes.edit', $note) }}">
                 Update
             </a>
+            <a class="py-2 font-serif text-sky-600 dark:text-sky-500 focus:border-slate-500" href="{{ route('notes.index') }}">Back</a>
         </div>
     </div>
 

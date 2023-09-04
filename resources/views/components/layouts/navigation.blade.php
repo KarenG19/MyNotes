@@ -1,8 +1,3 @@
-{{-- <ul>
-    <li><a href="{{ route('home') }}">Home</a></li>
-    <li><a href="{{ route('notes.index') }}">Notes</a></li>
-    <li><a href="{{ route('profile') }}">Profile</a></li>
-</ul> --}}
 <nav class="w-screen overflow-scroll bg-white border-b dark:bg-slate-800 border-slate-800/10 lg:px-8 dark:border-slate-300/10 lg:mx-0">
     <div class="px-4 mx-auto max-w-7xl sm:px-16 lg:px-20">
         <div class="relative flex items-center justify-between h-16">

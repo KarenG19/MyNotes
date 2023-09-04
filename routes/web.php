@@ -9,7 +9,6 @@ use Symfony\Component\HttpKernel\Profiler\Profile;
 
 Route::view('/home', 'home')->name('home');
 
-
 // Route::get('/notes', [NotesController::class, 'index'])->name('notes.index');
 // Route::get('/notes/create', [NotesController::class, 'create'])->name('notes.create');
 // Route::post('/notes', [NotesController::class, 'store'])->name('notes.store');
@@ -22,9 +21,6 @@ Route::resource('notes', NotesController::class, [
     'names' => 'notes',
     'parameters' => ['notes' => 'idnote']
 ]);
-
-
-// Route::view('/profile', 'profile')->name('profile')->middleware('auth');
 
 Route::get('/users', [UsersController::class, 'index'])->name('users.index')->middleware('auth');
 Route::get('/users/{iduser}/edit', [UsersController::class, 'edit'])->name('users.edit')->middleware('auth');

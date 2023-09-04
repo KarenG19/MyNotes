@@ -42,7 +42,7 @@ class NotesController extends Controller
     {
         $idnote->update($request->validated());
 
-        return to_route('notes.index', $idnote);
+        return to_route('notes.show', $idnote);
     }
 
     public function destroy(Note $idnote){

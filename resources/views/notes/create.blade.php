@@ -10,11 +10,11 @@
         
         @include('notes.form-fields')
 
-        <div class="flex flex-col items-center justify-center my-4 mx-auto">
-            {{-- <a class="text-sm font-semibold underline border-2 border-transparent rounded dark:text-slate-300 text-slate-600 focus:border-slate-500 focus:outline-none" href="{{ route('notes.index') }}">Regresar</a> --}}
+        <div class="flex flex-col items-center justify-center my-2 mx-auto">
             <button class="px-8 py-2 text-xs font-semibold tracking-widest text-center text-white uppercase transition duration-150 ease-in-out border border-2 border-transparent rounded-md dark:text-sky-200 bg-sky-800 hover:bg-sky-700 active:bg-sky-700 focus:outline-none focus:border-sky-500" type="submit"> 
                 Create
             </button>
+            <a class="py-2 font-serif text-sky-600 dark:text-sky-500 focus:border-slate-500" href="{{ route('notes.index') }}">Back</a>
         </div>
     </form>
 
